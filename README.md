@@ -64,16 +64,16 @@ using `-l` in your classname will add padding or margin to the **left**
 
 ### Sizes
 
-**-quart**
+**-quart**  
 using the `-quart` suffix is the equivelant of *0.25em*
 
-**-half**
+**-half**  
 using the `-half` suffix is the equivelant of *0.5em*
 
-**-1-half**
+**-1-half**  
 using the `-1-half` suffix is the equivelant of *1.5em*
 
-**Any number between 1 and 15**
+**Any number between 1 and 15**  
 using any number between 1 and 15 will result in the size of that number in em. For example, using `-2` is the equivelant of 2em;
 
 ## Examples
