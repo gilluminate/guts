@@ -28,37 +28,121 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h1>
+<a name="gutscss" class="anchor" href="#gutscss"><span class="octicon octicon-link"></span></a>Guts.css</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>A set of gutter classes you can use to add padding or margins to any element. This can be especially helpful using gutterless grid systems such as Pure.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Uses em based measurements which makes it easy to use in responsive environments. By chaging the font size of the element in use, the ems respond. So to change gutter sizes, all you need to do is change the font size in your breakpoints.</p>
+
+<p>Includes options for either <em>padding</em> or <em>margin</em> or both, depending on your layout needs.</p>
+
+<p>Easily determine where the gutter will appear (top, left, etc.) and how big using an intuitive namind system.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Classnames are set up in 3 parts to determine type, position, and size of the gutter:</p>
+
+<p><code>guts-[type]-[position]-[size]</code></p>
+
+<p><strong>padding vs. margin</strong><br>
+Guts consist of two types of class prefixes, padding (<code>guts-p-</code>) and margin (<code>guts-m-</code>).</p>
+
+<p><strong>position</strong><br>
+Positions can easily be determined using shorthand parts of the classes. For example <code>guts-p-t-</code> sets the padding to only occur at the top (<code>-t</code>).</p>
+
+<p><strong>units</strong><br>
+Each class requires a unit suffix to determine how large the gutter will be. For example <code>guts-p-t-2</code> will set a 2em sized padding at the top of the element.</p>
+
+<p>Keep in mind, you can use multiple classes on the same element if so desired to add padding and margins to your block element. You can also use multiple classes on the same element to give a mixture different sizes.</p>
+
+<h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<p>There are various options for each part of the classname, providing a convenient and powerful gutter system for customizing your layout.</p>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="types" class="anchor" href="#types"><span class="octicon octicon-link"></span></a>Types</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p><strong>-p</strong><br>
+using <code>-p</code> in your classname will add <strong>padding</strong></p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p><strong>-m</strong><br>
+using <code>-m</code> in your classname will add <strong>margins</strong></p>
 
 <h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a name="positions" class="anchor" href="#positions"><span class="octicon octicon-link"></span></a>Positions</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p><strong>-full</strong><br>
+using <code>-full</code> in your classname will add padding or margin <strong>all the way around</strong></p>
+
+<p><strong>-v</strong><br>
+using <code>-v</code> in your classname will add padding or margin to the <strong>top and bottom</strong></p>
+
+<p><strong>-h</strong><br>
+using <code>-h</code> in your classname will add padding or margin to the <strong>left and right</strong></p>
+
+<p><strong>-t</strong><br>
+using <code>-t</code> in your classname will add padding or margin to the <strong>top</strong></p>
+
+<p><strong>-b</strong><br>
+using <code>-b</code> in your classname will add padding or margin to the <strong>bottom</strong></p>
+
+<p><strong>-r</strong><br>
+using <code>-r</code> in your classname will add padding or margin to the <strong>right</strong></p>
+
+<p><strong>-l</strong><br>
+using <code>-l</code> in your classname will add padding or margin to the <strong>left</strong></p>
+
+<h3>
+<a name="sizes" class="anchor" href="#sizes"><span class="octicon octicon-link"></span></a>Sizes</h3>
+
+<p><strong>-quart</strong>
+using the <code>-quart</code> suffix is the equivelant of <em>0.25em</em></p>
+
+<p><strong>-half</strong>
+using the <code>-half</code> suffix is the equivelant of <em>0.5em</em></p>
+
+<p><strong>-1-half</strong>
+using the <code>-1-half</code> suffix is the equivelant of <em>1.5em</em></p>
+
+<p><strong>Any number between 1 and 15</strong>
+using any number between 1 and 15 will result in the size of that number in em. For example, using <code>-2</code> is the equivelant of 2em;</p>
+
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p><code>class="guts-p-t-3"</code><br>
+is the equivelant of adding the following styles to your css:</p>
+
+<blockquote>
+<p>padding-top: 3em;</p>
+</blockquote>
+
+<p><code>class="guts-m-h-2"</code><br>
+is the equivelant of adding the following styles to your css:</p>
+
+<blockquote>
+<p>margin-left: 2em;<br>margin-right: 2em;</p>
+</blockquote>
+
+<p><code>class="guts-p-full-half"</code><br>
+is the equivelant of adding the following styles to your css:</p>
+
+<blockquote>
+<p>padding: 0.5em;</p>
+</blockquote>
+
+<p><code>class="guts-p-v-2 guts-m-h-1"</code>
+is the equivelant of adding the following styles to your css:</p>
+
+<blockquote>
+<p>padding-top: 2em;<br>padding-bottom: 2em;<br>margin-left: 1em;<br>margin-right: 1em;</p>
+</blockquote>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/gilluminate">gilluminate</a></p>
