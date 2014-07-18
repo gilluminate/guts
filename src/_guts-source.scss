@@ -1,0 +1,32 @@
+@mixin guts($type, $position, $value) {
+  @if $position == horizontal {
+    #{$type}-right: #{$value}em;
+    #{$type}-left: #{$value}em;
+  } @else if $position == vertical {
+    #{$type}-top: #{$value}em;
+    #{$type}-bottom: #{$value}em;
+  } @else if $position == full {
+    #{$type}: #{$value}em;
+  } @else {
+    #{$type}-#{$position}: #{$value}em;
+  }
+}
+@each $type in padding, margin {
+  $short-type: p;
+  @if $type == margin { $short-type: m; }
+  @each $position in top, bottom, right, left, vertical, horizontal, full {
+    $short-pos: full;
+    @if $position == top { $short-pos: t; }
+    @if $position == bottom { $short-pos: b; }
+    @if $position == right { $short-pos: r; }
+    @if $position == left { $short-pos: l; }
+    @if $position == vertical { $short-pos: v; }
+    @if $position == horizontal { $short-pos: h; }
+    .guts-#{$short-type}-#{$short-pos}-quart { @include guts($type, $position, 0.25) }
+    .guts-#{$short-type}-#{$short-pos}-half { @include guts($type, $position, 0.5) }
+    .guts-#{$short-type}-#{$short-pos}-1-half { @include guts($type, $position, 1.5) }
+    @for $i from 1 through 15 {
+      .guts-#{$short-type}-#{$short-pos}-#{$i} { @include guts($type, $position, $i) }
+    }
+  }
+}
