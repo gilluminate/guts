@@ -98,15 +98,15 @@ is the equivelant of adding the following styles to your css:
 is the equivelant of adding the following styles to your css:
 > padding: 0.5em;
 
-`class="guts-p-v-2 guts-m-h-1"`
+`class="guts-p-v-2 guts-m-h-1"`  
 is the equivelant of adding the following styles to your css:
 > padding-top: 2em;<br>padding-bottom: 2em;<br>margin-left: 1em;<br>margin-right: 1em;
 
-`class="m-guts-m-full-1 guts-m-full-1"`
+`class="m-guts-m-full-1 guts-m-full-1"`  
 tells the margin to remain at 1em even after the 786 breakpoint
 
-`class="m-guts-p-full-2"`
+`class="m-guts-p-full-2"`  
 no padding will appear until the 768 breakpoint.
 
-`class="guts-m-full-1 m-no-guts"`
+`class="guts-m-full-1 m-no-guts"`  
 margin of 1em will be used until the screen drops below the 768 breakpoint, then margin will be completely removed.
