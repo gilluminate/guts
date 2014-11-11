@@ -8,7 +8,7 @@ Uses em based measurements which makes it easy to use in responsive environments
 
 Includes options for either *padding* or *margin* or both, depending on your layout needs.
 
-Easily determine where the gutter will appear (top, left, etc.) and how big using an intuitive namind system.
+Easily determine where the gutter will appear (top, left, etc.) and how big using an intuitive naming system.
 
 ## Usage
 
