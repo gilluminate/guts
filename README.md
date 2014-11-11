@@ -76,6 +76,14 @@ using the `-1-half` suffix is the equivelant of *1.5em*
 **Any number between 1 and 15**  
 using any number between 1 and 15 will result in the size of that number in em. For example, using `-2` is the equivelant of 2em;
 
+### Mobile support
+
+I've added a breakpoint at 768px. If the window gets below that size threshold the sizes above will be cut in half. You can also set mobile only guts which will either over-ride the half size or only be used in mobile if used alone. (See example below)
+
+You can change the breakpoint in the scss variable if desired.
+
+I've also added a .m-no-guts class to remove _all_ padding and margins below the breakpoint.
+
 ## Examples
 
 `class="guts-p-t-3"`  
@@ -93,3 +101,12 @@ is the equivelant of adding the following styles to your css:
 `class="guts-p-v-2 guts-m-h-1"`
 is the equivelant of adding the following styles to your css:
 > padding-top: 2em;<br>padding-bottom: 2em;<br>margin-left: 1em;<br>margin-right: 1em;
+
+`class="m-guts-m-full-1 guts-m-full-1"`
+tells the margin to remain at 1em even after the 786 breakpoint
+
+`class="m-guts-p-full-2"`
+no padding will appear until the 768 breakpoint.
+
+`class="guts-m-full-1 m-no-guts"`
+margin of 1em will be used until the screen drops below the 768 breakpoint, then margin will be completely removed.
