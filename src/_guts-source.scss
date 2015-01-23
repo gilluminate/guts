@@ -80,7 +80,7 @@ $mobile-break-point: 768px !default;
 			.m-guts-#{$short-type}-#{$short-pos}-1-half {
 				@include guts($type, $position, 1.5);
 			}
-			@for $i from 1 through 15 {
+			@for $i from 0 through 15 {
 				.m-guts-#{$short-type}-#{$short-pos}-#{$i} {
 					@include guts($type, $position, $i);
 				}
