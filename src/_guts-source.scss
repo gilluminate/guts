@@ -1,94 +1,97 @@
 $mobile-break-point: 768px !default;
 
 @mixin guts($type, $position, $value) {
-	@if $position == horizontal {
-		#{$type}-right: #{$value}em !important;
-		#{$type}-left: #{$value}em !important;
-	}
-	@else if $position == vertical {
-		#{$type}-top: #{$value}em !important;
-		#{$type}-bottom: #{$value}em !important;
-	}
-	@else if $position == full {
-		#{$type}: #{$value}em !important;
-	}
-	@else {
-		#{$type}-#{$position}: #{$value}em !important;
-	}
+  $rem: 'rem';
+  @if $value == auto {
+    $rem: '';
+  }
+
+  @if $position == horizontal {
+    #{$type}-right: #{$value}#{$rem} !important;
+    #{$type}-left: #{$value}#{$rem} !important;
+  } @else if $position == vertical {
+    #{$type}-top: #{$value}#{$rem} !important;
+    #{$type}-bottom: #{$value}#{$rem} !important;
+  } @else if $position == full {
+    #{$type}: #{$value}#{$rem} !important;
+  } @else {
+    #{$type}-#{$position}: #{$value}#{$rem} !important;
+  }
 }
 
 @each $type in padding, margin {
-	$short-type: p;
-	@if $type == margin {
-		$short-type: m;
-	}
-	@each $position in top, bottom, right, left, vertical, horizontal, full {
-		$short-pos: full;
-		@if $position == top {
-			$short-pos: t;
-		}
-		@if $position == bottom {
-			$short-pos: b;
-		}
-		@if $position == right {
-			$short-pos: r;
-		}
-		@if $position == left {
-			$short-pos: l;
-		}
-		@if $position == vertical {
-			$short-pos: v;
-		}
-		@if $position == horizontal {
-			$short-pos: h;
-		}
-		.guts-#{$short-type}-#{$short-pos}-quart {
-			@include guts($type, $position, 0.25);
-		}
-		.guts-#{$short-type}-#{$short-pos}-half {
-			@include guts($type, $position, 0.5);
-		}
-		.guts-#{$short-type}-#{$short-pos}-1-half {
-			@include guts($type, $position, 1.5);
-		}
-		@for $i from 1 through 15 {
-			.guts-#{$short-type}-#{$short-pos}-#{$i} {
-				@include guts($type, $position, $i);
-			}
-		}
-		@media (max-width: $mobile-break-point) {
-			.guts-#{$short-type}-#{$short-pos}-quart {
-				@include guts($type, $position, 0.15);
-			}
-			.guts-#{$short-type}-#{$short-pos}-half {
-				@include guts($type, $position, 0.25);
-			}
-			.guts-#{$short-type}-#{$short-pos}-1-half {
-				@include guts($type, $position, 0.75);
-			}
-			@for $i from 1 through 15 {
-				.guts-#{$short-type}-#{$short-pos}-#{$i} {
-					@include guts($type, $position, $i / 2);
-				}
-			}
-			.m-guts-#{$short-type}-#{$short-pos}-quart {
-				@include guts($type, $position, 0.25);
-			}
-			.m-guts-#{$short-type}-#{$short-pos}-half {
-				@include guts($type, $position, 0.5);
-			}
-			.m-guts-#{$short-type}-#{$short-pos}-1-half {
-				@include guts($type, $position, 1.5);
-			}
-			@for $i from 0 through 15 {
-				.m-guts-#{$short-type}-#{$short-pos}-#{$i} {
-					@include guts($type, $position, $i);
-				}
-			}
-			.m-no-guts {
-				padding: 0 !important;
-				margin: 0 !important;
-			}
-		}
-	}
+  $short-type: p;
+  @if $type == margin {
+    $short-type: m;
+  }
+  @each $position in top, bottom, right, left, vertical, horizontal, full {
+    $short-pos: full;
+    @if $position == top {
+      $short-pos: t;
+    }
+    @if $position == bottom {
+      $short-pos: b;
+    }
+    @if $position == right {
+      $short-pos: r;
+    }
+    @if $position == left {
+      $short-pos: l;
+    }
+    @if $position == vertical {
+      $short-pos: v;
+    }
+    @if $position == horizontal {
+      $short-pos: h;
+    }
+    .guts-#{$short-type}-#{$short-pos}-auto {
+      @include guts($type, $position, auto);
+    }
+    .guts-#{$short-type}-#{$short-pos}-quart {
+      @include guts($type, $position, 0.25);
+    }
+    .guts-#{$short-type}-#{$short-pos}-half {
+      @include guts($type, $position, 0.5);
+    }
+    .guts-#{$short-type}-#{$short-pos}-1-half {
+      @include guts($type, $position, 1.5);
+    }
+    .guts-#{$short-type}-#{$short-pos}-2-half {
+      @include guts($type, $position, 2.5);
+    }
+    .guts-#{$short-type}-#{$short-pos}-3-half {
+      @include guts($type, $position, 3.5);
+    }
+    @for $i from 0 through 15 {
+      .guts-#{$short-type}-#{$short-pos}-#{$i} {
+        @include guts($type, $position, $i);
+      }
+    }
+    @media (max-width: $mobile-break-point) {
+      .m-guts-#{$short-type}-#{$short-pos}-quart {
+        @include guts($type, $position, 0.25);
+      }
+      .m-guts-#{$short-type}-#{$short-pos}-half {
+        @include guts($type, $position, 0.5);
+      }
+      .m-guts-#{$short-type}-#{$short-pos}-1-half {
+        @include guts($type, $position, 1.5);
+      }
+      .m-guts-#{$short-type}-#{$short-pos}-2-half {
+        @include guts($type, $position, 2.5);
+      }
+      .m-guts-#{$short-type}-#{$short-pos}-3-half {
+        @include guts($type, $position, 3.5);
+      }
+      @for $i from 0 through 15 {
+        .m-guts-#{$short-type}-#{$short-pos}-#{$i} {
+          @include guts($type, $position, $i);
+        }
+      }
+      .m-no-guts {
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+    }
+  }
 }
