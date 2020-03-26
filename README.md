@@ -76,6 +76,9 @@ using the `-1-half` suffix is the equivelant of *1.5em*
 **Any number between 1 and 15**  
 using any number between 1 and 15 will result in the size of that number in em. For example, using `-2` is the equivelant of 2em;
 
+**-auto**  
+for cases where  `auto` is needed as an override
+
 ### Mobile support
 
 I've added a breakpoint at 768px. If the window gets below that size threshold the sizes above will be cut in half. You can also set mobile only guts which will either over-ride the half size or only be used in mobile if used alone. (See example below)
